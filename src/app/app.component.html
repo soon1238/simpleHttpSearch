@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div ng-controller="formCtrl">
+<form>
+  Search:<input class='inputField' type='text' [(ngModel)]='placename' name='place1'>
+</form>
+<button (click)="searchPlace()">Submit</button>
+
+</div>
+
+<table>
+  <tr>
+    <th>Block #</th>
+    <th>Road Name</th>
+    <th>Building</th>
+    <th>Address</th>
+  </tr>
+
+  <tr *ngFor="let placeData of placeDatas" >
+    <td>{{placeData.BLK_NO}}</td>
+    <td>{{placeData.ROAD_NAME}}</td>
+    <td>{{placeData.BUILDING}}</td>
+    <td>{{placeData.ADDRESS}}</td>
+
+  </tr>
+</table>
